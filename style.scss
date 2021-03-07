@@ -17,7 +17,8 @@ body{
 }
 
 .wrapper{
-    padding-top:50px;
+    // padding-top:50px;
+    // background-color: red;
     padding-bottom:5px;
     position: relative;
     display: grid;
@@ -33,6 +34,7 @@ body{
 
 .pageTitle{
     position: relative;
+    padding-top:15px;
     bottom:25px;
     grid-area:top;
     text-align: center;
@@ -40,7 +42,7 @@ body{
         margin-top:0;
     }
     font-size:2em;
-    margin-bottom:25px;
+    margin: auto auto 25px auto;
 
 }
 
@@ -138,7 +140,8 @@ h2{
 
     .pageTitle{
         order: 1;
-        margin:auto;
+        margin:0 auto 0 auto;
+        height: 75px;
     }
 
     .topFour{
@@ -164,6 +167,7 @@ h2{
     }
 
     .box{
+        padding-bottom: 15px;
         a{
             color: $textColor;
         }
