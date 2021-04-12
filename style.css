@@ -1,8 +1,17 @@
 html {
-  background-color: #0000;
-  font-family: "Gaegu", cursive;
-  color: #A7CDBD;
-  height: 95%;
+  background-color: #D3D4D9;
+  background-image: url(images/shapes_1_no_border.png), url(images/shapes_2.png), url(images/shapes_3.png), url(images/shapes_4.png);
+  background-position: 50% 100%, 50% 35%, 50% 95%, 50% 20%;
+  background-size: 400px, 150px, 250px, 150px, 150px;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+html h2 {
+  color: #EC526f;
+  background-color: #D3D4D9;
+}
+html a, html a:visited {
+  color: #272635;
 }
 
 body {
@@ -25,16 +34,14 @@ body {
 }
 
 .pageTitle {
-  position: relative;
-  padding-top: 15px;
-  bottom: 25px;
-  grid-area: top;
-  text-align: center;
-  font-size: 2em;
-  margin: auto auto 25px auto;
+  display: block;
+  margin: auto;
 }
-.pageTitle h1 {
-  margin-top: 0;
+.pageTitle img {
+  display: block;
+  max-height: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h2 {
@@ -44,21 +51,23 @@ h2 {
   margin-bottom: 0;
 }
 
+.support_artists {
+  text-align: center;
+  width: 50%;
+  margin: 15px auto;
+  padding: 0 0 15px 0;
+  color: #EC526f;
+}
+
 .topFour {
-  grid-area: left;
   margin-bottom: 10px;
-  height: 100%;
   margin-top: 15px;
 }
 
 .albumCovers {
-  grid-area: left;
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
-}
-.albumCovers .larger-text {
-  font-size: 1.2em;
 }
 .albumCovers p {
   text-align: center;
@@ -66,41 +75,98 @@ h2 {
   margin-top: 0;
 }
 
+.larger-text {
+  font-size: 1.2em;
+}
+
 .box {
-  position: relative;
-  width: 200px;
-  height: 225px;
-  padding: 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  width: 250px;
+  height: 100px;
+  padding: 25px 0;
   margin: auto auto 25px auto;
+  box-shadow: 5px 5px 5px black;
 }
 .box img {
-  display: block;
+  max-height: 100px;
   position: relative;
-  max-height: 75%;
-  margin-left: auto;
-  margin-right: auto;
+  left: 0px;
 }
 .box p {
   position: relative;
-  margin-top: 5px;
-  margin-bottom: 0;
-}
-.box a:visited {
-  color: #A7CDBD;
-}
-
-.box:hover p {
-  text-decoration: underline;
+  font-size: 0.9em;
+  word-wrap: break-word;
+  width: 50%;
+  align-self: center;
 }
 
 .playlist {
-  grid-area: right;
-  margin-top: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  margin: auto;
+  color: #EC526f;
+  width: 100%;
 }
 
 .display-playlist iframe {
-  width: 350px;
   height: 450px;
+}
+
+.lineMarks {
+  line-height: 10%;
+  text-align: center;
+}
+
+.lineMarks span {
+  display: inline-block;
+  position: relative;
+}
+
+.lineMarks span:before,
+.lineMarks span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid #272635;
+  top: -1%;
+  width: 100px;
+}
+
+.lineMarks span:before {
+  right: 90%;
+  margin-right: 12px;
+}
+
+.lineMarks span:after {
+  left: 90%;
+  margin-left: 12px;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-areas: "spacer logo logo instagram";
+  grid-template-columns: 1fr 2fr 1fr;
+  margin-right: 5%;
+}
+.footer .logo {
+  margin: auto;
+  grid-area: logo;
+}
+.footer .logo img {
+  max-height: 65px;
+}
+.footer .insta {
+  grid-area: instagram;
+  margin: auto;
+}
+.footer .insta img {
+  max-height: 25px;
 }
 
 @media only screen and (max-width: 841px) {
@@ -134,11 +200,10 @@ h2 {
 
   .playlist {
     order: 3;
-    margin: 50px auto 100px auto;
-    padding-bottom: 100px;
+    text-align: center;
   }
   .playlist h2 {
-    display: none;
+    text-align: center;
   }
   .playlist iframe {
     width: 100%;
@@ -148,10 +213,10 @@ h2 {
     padding-bottom: 15px;
   }
   .box a {
-    color: #A7CDBD;
+    color: #272635;
   }
   .box a:visited {
-    color: #A7CDBD;
+    color: #272635;
   }
 }
 

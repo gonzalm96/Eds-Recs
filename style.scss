@@ -1,12 +1,23 @@
-$mainColor: #91785D;
-$secondaryColor: #BBE1C3;
-$textColor: #A7CDBD;
+$mainColor: #D3D4D9;
+$secondaryColor: #EC526f;
+$textColor: #272635;
 
 html{
     background-color: $mainColor;
-    font-family: 'Gaegu', cursive;
-    color: $textColor;
-    height:95%;
+    background-image: url(images/shapes_1_no_border.png), url(images/shapes_2.png), url(images/shapes_3.png), url(images/shapes_4.png);
+    background-position: 50% 100%, 50% 35%, 50% 95%, 50% 20%;
+    background-size: 400px, 150px, 250px, 150px, 150px;
+    background-repeat: no-repeat;
+
+    h2{
+        color: $secondaryColor;
+        background-color: $mainColor;
+    }
+    a, a:visited{
+        color: $textColor;
+    }
+
+    overflow-x: hidden;
 }
 
 body{
@@ -17,8 +28,6 @@ body{
 }
 
 .wrapper{
-    // padding-top:50px;
-    // background-color: red;
     padding-bottom:5px;
     position: relative;
     display: grid;
@@ -29,21 +38,18 @@ body{
     "top top top"
     "left mid right";
     grid-template-columns: 1.5fr .25fr 1fr;
-    grid-template-rows: 50px auto;   
+    grid-template-rows: 50px auto;  
 }
 
 .pageTitle{
-    position: relative;
-    padding-top:15px;
-    bottom:25px;
-    grid-area:top;
-    text-align: center;
-    h1{
-        margin-top:0;
+    display: block;
+    margin:auto;
+    img{
+        display: block;
+        max-height:50px;
+        margin-left: auto;
+        margin-right: auto;
     }
-    font-size:2em;
-    margin: auto auto 25px auto;
-
 }
 
 h2{
@@ -53,74 +59,140 @@ h2{
     margin-bottom:0;
 }
 
+.support_artists{
+    text-align: center;
+    width:50%;
+    margin:15px auto;
+    padding: 0 0 15px 0;
+    color: $secondaryColor;
+}
+
 .topFour{
-    grid-area: left;
     margin-bottom:10px;
-    height:100%;
     margin-top:15px;
 }
 
 .albumCovers{
-    grid-area:left;
     display: flex;
     justify-content: space-around;
     flex-flow: row wrap;
-    
-    .larger-text{
-        font-size: 1.2em;
-    }
 
     p{
         text-align: center;
         font-size:1.2em;
         margin-top:0;
     }
+}
 
-    //border:1px dashed red;
-
+.larger-text {
+    //background-color: red;
+    font-size: 1.2em;
+    //padding-bottom: 50px;
 }
 
 .box{
-    position: relative;
-    width:200px;
-    height:225px;
-    //border:1px solid $secondaryColor;
-    padding:5px;
+    //position: relative;
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    width: 250px;
+    height:100px;
+    padding:25px 0;
     margin:auto auto 25px auto;
     img{
-        display: block;
+        max-height: 100px;
         position: relative;
-        max-height: 75%;
-        // border:1px dashed yellow;
-        margin-left:auto;
-        margin-right:auto;
+        left: 0px;
+        //padding:0 15px 0 25px;
+        //background-color:red;
     }
     p{
         position: relative;
-        margin-top:5px;
-        margin-bottom:0;
-
+        font-size: .9em;
+        word-wrap: break-word;
+        width:50%;
+        //background-color: purple;
+        align-self: center;
     }
-    a:visited{
-        color: $textColor;
-    }
+    box-shadow: 5px 5px 5px black;
 }
 
-.box:hover{ 
-    p{
-        text-decoration: underline;
-    }
-}
 .playlist{
-    grid-area:right;
-    margin-top:15px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    margin:auto;
+    color: $secondaryColor;
+    width:100%;
+
 }
 
 .display-playlist{
     iframe{
-        width:350px;
+        //width:50px;
         height:450px;
     }
+}
+
+.lineMarks {
+    line-height: 10%;
+    text-align: center;
+}
+
+.lineMarks span {
+    display: inline-block;
+    position: relative;
+}
+
+.lineMarks span:before,
+.lineMarks span:after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    border-bottom: 1px solid $textColor;
+    top: -1%;
+    width: 100px;
+}
+
+.lineMarks span:before {
+    right: 90%;
+    margin-right: 12px;
+}
+
+.lineMarks span:after {
+    left: 90%;
+    margin-left: 12px;
+}
+
+.footer{
+    position: relative;
+    bottom:0;
+    left:0;
+    // display: flex;
+    // flex-flow: row nowrap;
+    // justify-content: flex-end;
+    display: grid;
+    grid-template-areas: "spacer logo logo instagram";
+    grid-template-columns: 1fr 2fr 1fr;
+    //background-color: purple;
+
+    margin-right: 5%;
+    .logo{
+        margin:auto;
+        grid-area: logo;
+        img{
+        max-height: 65px;
+        }
+    }
+
+    .insta{
+        grid-area:instagram;
+        margin:auto;
+        img{
+        max-height: 25px;
+        }
+    }
+
 }
 
 @media only screen and (max-width:841px){
@@ -155,11 +227,10 @@ h2{
 
     .playlist{
         order:3;
-        margin:50px auto 100px auto;
-        // margin-top:50px;
-        padding-bottom:100px;
+        //margin:50px auto 100px auto;
+        text-align: center;
         h2{
-            display: none;
+            text-align: center;
         }
         iframe{
             width:100%;
